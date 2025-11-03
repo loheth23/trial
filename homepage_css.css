@@ -1,0 +1,202 @@
+/* --- 1. Global Setup & Variables --- */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Colors from Design */
+    --color-home-bg-start: #d3ff75; /* Lime Green */
+    --color-home-bg-end: #ffffff;
+    --color-home-text: #4a00e0; /* Deep Purple/Blue */
+    --color-home-login-btn: #b9ff3b; /* Brighter Lime */
+    
+    --color-login-bg: #1de9b6; /* Teal */
+    --color-login-modal-start: #00c6ff; /* Bright Blue */
+    --color-login-modal-end: #9c00ff; /* Purple */
+    --color-login-input-bg: #ebebeb;
+    --color-login-text: #ffffff;
+    
+    --color-nav-bg: #ffffff;
+    --color-nav-text: #555555;
+    --color-nav-active: #000000;
+    --color-profile-circle: #1de9b6; /* Teal */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 2. Home Page Styles --- */
+
+.home-page {
+margin: 0; 
+    background: linear-gradient(180deg, var(--color-home-bg-start) 0%, var(--color-home-bg-end) 100%);
+}
+
+.navbar {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0.25rem;
+    background-color: var(--color-nav-bg);
+    width: 100%;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-nav-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: var(--color-nav-active);
+}
+
+
+.welcome-container {
+    flex-grow: 1; /* Takes up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    gap: 2.5rem;
+}
+
+.welcome-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-home-text);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-home-login {
+    background-color: var(--color-home-login-btn);
+    color: var(--color-home-text);
+    font-weight: 700;
+    padding: 1rem 3.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- 3. Login Page Styles --- */
+
+.login-page {
+    background-color: var(--color-login-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--color-login-modal-start), var(--color-login-modal-end));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: var(--color-login-text);
+}
+
+.login-card h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    border-radius: 15px; /* Rounded rectangle */
+    background-color: var(--color-login-input-bg);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.login-form input::placeholder {
+    color: #888;
+    font-weight: 600;
+}
+
+.login-form input:focus {
+    outline: 2px solid var(--color-login-modal-start);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding: 0 1rem;
+}
+
+.btn-back,
+.btn-continue {
+    background: none;
+    border: none;
+    color: var(--color-login-text);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.btn-back:hover,
+.btn-continue:hover {
+    opacity: 0.8;
+}
